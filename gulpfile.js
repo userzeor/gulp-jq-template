@@ -8,7 +8,9 @@ const rev = require("gulp-rev"); //对文件名加MD5后缀
 const revCollector = require("gulp-rev-collector"); //路径替换
 const uglify = require("gulp-uglify"); //js文件压缩
 const cleanCSS = require("gulp-clean-css"); // css文件压缩
-var watch = require("gulp-watch"); // 监听
+const watch = require("gulp-watch"); // 监听
+const uncss = require('gulp-uncss'); // 清除冗余没用的css
+const autoprefixer = require('gulp-autoprefixer'); // 加上css样式兼容前缀
 
 const buildBasePath = "./build/";
 
@@ -39,6 +41,10 @@ gulp.task("stylus", function () {
         "include css": true,
       })
     ) //stylus转成css
+    .pipe(autoprefixer())
+    // .pipe(uncss({  
+    //     html: ['views/**/*.html', 'index.html']   // 去除没用到的css
+    // }))
     .pipe(rev()) //文件名加MD5后缀
     .pipe(gulp.dest(buildBasePath + "src/assets/style")) //输出到css目录
     .pipe(rev.manifest("rev-styl-manifest.json")) //生成一个rev-manifest.json
@@ -49,6 +55,10 @@ gulp.task("stylus", function () {
 gulp.task("minifycssmd5", function () {
   return gulp
     .src("./src/assets/style/**/*.css")
+    .pipe(autoprefixer())
+    // .pipe(uncss({  
+    //     html: ['views/**/*.html', 'index.html']   // 去除没用到的css
+    // }))
     .pipe(cleanCSS({ compatibility: "ie8" })) //压缩css到一样
     .pipe(rev()) //文件名加MD5后缀
     .pipe(gulp.dest(buildBasePath + "src/assets/style")) //输出到css目录
@@ -81,9 +91,9 @@ gulp.task("rev", function () {
 gulp.task("revimg", function () {
   //css，主要是针对img替换
   return gulp
-    .src(["rev/**/rev-img-manifest.json", buildBasePath + "style/**/**/*.css"])
+    .src(["rev/**/rev-img-manifest.json", buildBasePath + "src/assets/style/**/**/*.css"])
     .pipe(revCollector({ replaceReved: true }))
-    .pipe(gulp.dest(buildBasePath + "src/assets/css"));
+    .pipe(gulp.dest(buildBasePath + "src/assets/style"));
 });
 
 //复制lib文件夹到打包目录
@@ -95,8 +105,8 @@ gulp.task("copy", function () {
 gulp.task("watch", function () {
   w("./src/**/*.html", ["rev"]);
   w("./src/assets/js/**/*.js", ["minifyjsmd5", "rev"]);
-  w("./src/assets/style/**/*.css", ["minifycssmd5", "rev"]);
-  w("./src/assets/style/**/*.styl", ["stylus", "rev"]);
+  w("./src/assets/style/**/*.css", ["minifycssmd5", "rev", "revimg"]);
+  w("./src/assets/style/**/*.styl", ["stylus", "rev", "revimg"]);
 
   function w(path, task) {
     watch(path, gulp.series(task));
