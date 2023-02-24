@@ -2,57 +2,149 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>赏金裂人官网</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/style/css/reset.css">
-    <link rel="stylesheet" href="./assets/style/stylus/home.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧药学平台</title>
+    <link rel="stylesheet" href="src/css/index.css">
+    <script src="./src/lib/jquery-1.9.1.min.js"></script>
+    <!-- 只让 IE 8 以及更低版本的浏览器下载该脚本 -->
+    <!--[if (lt IE 9) & (!IEMobile)]>
+    <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
-    <!-- 头部 -->
-    <div class="mheader">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-              <div class="navbar-header">
-                <a class="navbar-brand" href="#">
-                    <img src="./assets/images/home/logo@2x.png" alt="logo" class="logo">
-                </a>
-              </div>
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                  <li><a href="#">Link</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#">Link</a></li>
-                </ul>
-              </div>
+    <div class="main-box">
+        <div class="item">
+            <div class="list-box w-f-50">
+                <div class="list-item h-108 p-l-22 bg-1">
+                    <img src="./src/images/yxgs.png" class="i-img img-w-3 m-t-15" alt="" srcset="">
+                    <div class="text-info t-20 p-l-8">
+                        <div class="text-h">常用医学公式</div>
+                        <div class="text-p">Common medical formula</div>
+                    </div>
+                </div>
             </div>
-        </nav>
-        <!-- <div class="m-box">
-            <div class="logo-box">
-                <img src="./assets/images/home/logo@2x.png" alt="" class="logo">
-                <span class="logo-text">赏金裂人</span>
+            <div class="list-box w-f-50">
+                <div class="list-item h-108 p-l-22 bg-2">
+                    <img src="./src/images/rsqyy.png" class="i-img img-w-3 m-t-15" alt="" srcset="">
+                    <div class="text-info t-20 p-l-8">
+                        <div class="text-h">妊娠期用药</div>
+                        <div class="text-p f-14">Pregnancy</div>
+                    </div>
+                </div>
             </div>
-            <div class="item-box">
-                <div class="item-text">首页</div>
-                <div class="item-text">产品优势</div>
-                <div class="item-text">赚钱攻略</div>
-                <div class="item-text">商务合作</div>
+        </div>
+        <div class="item">
+            <div class="list-box v-t w-f-33">
+                <div class="list-item h-228 p-t-15 bg-3">
+                    <img src="./src/images/wx.png" class="img-w-5 i-img-1" alt="" srcset="">
+                    <div class="text-info block text-c">
+                        <div class="text-h">文献</div>
+                        <div class="text-p f-14">The literature</div>
+                    </div>
+                    <div class="item-img-box m-t-10">
+                        <div class="item-list">
+                            <img src="./src/images/lungCancer.svg" class="block img-w-6 m-x-15" alt="" srcset="">
+                            <span class="f-14 i-block">肺癌</span>
+                        </div>
+                        <div class="item-list">
+                            <img src="./src/images/esophagealCancer.svg" class="block img-w-6 m-x-15" alt="" srcset="">
+                            <span class="f-14 i-block">食管癌</span>
+                        </div>
+                        <div class="item-list">
+                            <img src="./src/images/transplant.svg" class="block img-w-6 m-x-15" alt="" srcset="">
+                            <span class="f-14 i-block">移植</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div> -->
+            <div class="list-box v-t w-f-33">
+                <div class="list-item p-t-40 h-228 bg-4">
+                    <img src="./src/images/jpzn.png" class="img-w-4 i-img-1" alt="" srcset="">
+                    <div class="text-info block text-c">
+                        <div class="text-h">精品指南</div>
+                        <div class="text-p f-14">Boutique guide</div>
+                    </div>
+                </div>
+            </div>
+            <div class="list-box w-f-33">
+                <div class="h-228">
+                    <div class="list-item h-108 m-b-12 bg-5">
+                        <img src="./src/images/lczl.png" class="i-img img-w-2 m-t-5" alt="" srcset="">
+                        <div class="text-info t-25">
+                            <div class="text-h">临床诊疗</div>
+                            <div class="text-p t-w">Clinical diagnosis and treatment</div>
+                        </div>
+                    </div>
+                    <div class="list-item h-108 bg-6">
+                        <img src="./src/images/ypsms.png" class="i-img img-w-2 m-t-20" alt="" srcset="">
+                        <div class="text-info t-25">
+                            <div class="text-h">药品说明书</div>
+                            <div class="text-p">Drug instructions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="list-box w-f-33">
+                <div class="list-item h-108 p-l-8 bg-7">
+                    <img src="./src/images/jsyy.png" class="i-img img-w-2 m-t-20" alt="" srcset="">
+                    <div class="text-info t-25">
+                        <div class="text-h">禁慎用药</div>
+                        <div class="text-p">Wisely banned drugs</div>
+                    </div>
+                </div>
+            </div>
+            <div class="list-box w-f-33">
+                <div class="list-item h-108 p-l-8 bg-8">
+                    <img src="./src/images/zyyyjj.png" class="i-img img-w-2 m-t-20" alt="" srcset="">
+                    <div class="text-info t-25">
+                        <div class="text-h">中药用药禁忌</div>
+                        <div class="text-p">Antimicrobials</div>
+                    </div>
+                </div>
+            </div>
+            <div class="list-box w-f-33">
+                <div class="list-item h-108 p-l-8 bg-9">
+                    <img src="./src/images/ywpw.png" class="i-img img-w-2 m-t-20" alt="" srcset="">
+                    <div class="text-info t-25">
+                        <div class="text-h">药物配伍</div>
+                        <div class="text-p">Drug compatibility</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="list-box w-f-33">
+                <div class="list-item h-108 p-l-8 bg-10">
+                    <img src="./src/images/lcjy.png" class="i-img img-w-2 m-t-20" alt="" srcset="">
+                    <div class="text-info t-25">
+                        <div class="text-h">临床检验</div>
+                        <div class="text-p">Clinical test</div>
+                    </div>
+                </div>
+            </div>
+            <div class="list-box w-f-33">
+                <div class="list-item h-108 p-l-8 bg-11">
+                    <img src="./src/images/yyzn.png" class="i-img img-w-2 m-t-20" alt="" srcset="">
+                    <div class="text-info t-25">
+                        <div class="text-h">用药指南</div>
+                        <div class="text-p">Medication guide</div>
+                    </div>
+                </div>
+            </div>
+            <div class="list-box w-f-33">
+                <div class="list-item h-108 p-l-8 bg-12">
+                    <img src="./src/images/kjy.png" class="i-img img-w-2 m-t-20" alt="" srcset="">
+                    <div class="text-info t-25">
+                        <div class="text-h">抗菌药指导</div>
+                        <div class="text-p">Antimicrobial guidance</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- 中间 -->
-    <div class="mbody">
-        <div class="partical-bg-wrapper partical-gradient-two">
-			<div id="particles-js-two"><canvas class="particles-js-canvas-el" width="1166" height="1000" style="width: 100%; height: 100%;"></canvas></div>
-		</div>
-    </div>
-    <!-- 底部 -->
-    <div class="mfooter"></div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="./lib/particles.js"></script>
-    <script src="./assets/js/home.js"></script>
+    <script src="src/js/index.js"></script>
 </body>
 </html>
