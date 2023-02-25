@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>智慧药学平台</title>
     <link rel="stylesheet" href="src/css/index.css">
-    <script src="./src/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="./src/lib/polyfill.min.js"></script>
     <!-- 只让 IE 8 以及更低版本的浏览器下载该脚本 -->
     <!--[if (lt IE 9) & (!IEMobile)]>
-    <script src="js/vendor/respond.min.js"></script>
     <![endif]-->
 </head>
 <body>
@@ -76,7 +75,7 @@
                             <div class="text-p t-w">Clinical diagnosis and treatment</div>
                         </div>
                     </div>
-                    <div class="list-item h-108 bg-6">
+                    <div id="ext-drugInst" class="list-item h-108 bg-6">
                         <img src="./src/images/ypsms.png" class="i-img img-w-2 m-t-20" alt="" srcset="">
                         <div class="text-info t-25">
                             <div class="text-h">药品说明书</div>
@@ -145,6 +144,11 @@
             </div>
         </div>
     </div>
+    <script src="src/lib/jquery-1.9.1.min.js"></script>
+    <!-- <script src="src/lib/crypto-js.min.js"></script> -->
+    <script src="src/js/utils/utils.js"></script>
+    <script src="src/js/api/api.js"></script>
+    <script src="src/js/request/request.js"></script>
     <script src="src/js/index.js"></script>
 </body>
 </html>

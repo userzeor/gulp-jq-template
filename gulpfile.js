@@ -145,6 +145,7 @@ gulp.task("revimg", function () {
 
 //复制lib文件夹到打包目录
 gulp.task("copy", function () {
+
   return gulp
     .src("./src/lib/**/*.js")
     .pipe(gulp.dest(buildBasePath + "src/lib"));
@@ -152,9 +153,10 @@ gulp.task("copy", function () {
 
 //监视文件的变化，有修改时，自动调用default缺省默认任务
 gulp.task("watch", function () {
-  w(["./src/page/**/*.html", "index.html"], ["rev"]);
-  w("./src/js/**/*.js", ["minifyjsmd5", "rev"]);
-  w("./src/css/**/*.css", ["minifycssmd5", "rev", "revimg"]);
+  w(["./src/page/**/*.html", "index.html"], ["rev", "rev-html"]);
+  w("./src/js/**/*.js", ["minifyjsmd5", "rev", "rev-html"]);
+  w("./src/css/**/*.css", ["minifycssmd5", "rev", "rev-html", "revimg"]);
+  w("./src/style/**/*.styl", ["stylus", "minifycssmd5", "rev", "rev-html", "revimg"]);
 
   function w(path, task) {
     watch(path, gulp.series(task));

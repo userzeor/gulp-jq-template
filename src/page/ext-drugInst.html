@@ -1,18 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/ext-drugInst/ext-drugInst.css">
-    <link rel="stylesheet" href="../style/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link
+      rel="stylesheet"
+      href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../css/reSet.css" />
+    <link rel="stylesheet" href="../css/bootstrapReSet.css" />
+    <link rel="stylesheet" href="../style/ext-drugInst/ext-drugInst.css" />
+    <link rel="stylesheet" href="../style/breadcrumb/breadcrumb.css" />
+    <script type="text/javascript" src="./src/lib/polyfill.min.js"></script>
     <title>Document</title>
-</head>
-<body>
-    <div class="f">
-        11221
-        <div class="c">45455454</div>
+  </head>
+  <body>
+    <div class="page">
+      <div class="breadcrumb">
+        <div class="breadcrumb-name">
+          <a href="/index.html" target="_self" class="b-link">知识库</a>
+        </div>
+        <span class="b-sp">/</span>
+        <div class="breadcrumb-name">
+          <a href="/index.html" target="_self" class="b-link">药品说明书</a>
+        </div>
+      </div>
+      <div class="content">
+        <div class="search">
+            <div class="s-label">
+            </div>
+            <input type="text" class="form-control" placeholder="输入关键字搜索..." aria-describedby="basic-addon1">
+        </div>
+        <img src="../images/noData2.png" alt="">
+      </div>
     </div>
+    <!-- <script src="src/lib/jquery-1.9.1.min.js"></script> -->
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="src/js/utils/utils.js"></script>
+    <script src="src/js/api/api.js"></script>
+    <script src="src/js/request/request.js"></script>
     <script src="../js/ext-drugInst/ext-drugInst.js"></script>
-</body>
+  </body>
 </html>
